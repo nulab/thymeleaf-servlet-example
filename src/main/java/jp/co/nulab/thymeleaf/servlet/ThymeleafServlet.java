@@ -49,7 +49,7 @@ public class ThymeleafServlet extends HttpServlet {
         TemplateEngine engine = new TemplateEngine();
         engine.setTemplateResolver(resolver);
 
-        WebContext ctx = new WebContext(request, getServletContext(), request.getLocale());
+        WebContext ctx = new WebContext(request, response, getServletContext(), request.getLocale());
         String templateName = getTemplateName(request);
         String result = engine.process(templateName, ctx);
 
